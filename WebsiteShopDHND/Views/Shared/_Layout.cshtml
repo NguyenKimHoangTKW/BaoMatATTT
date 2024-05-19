@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Enlink - Admin Dashboard Template</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Style/assets/images/logo/favicon.png">
+
+    <!-- page css -->
+    <!-- Core css -->
+    <link href="~/Style/assets/css/app.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="app">
+        <div class="layout">
+            <!-- Header START -->
+            @Html.Partial("_HeaderPartial")
+            <!-- Header END -->
+            <!-- Side Nav START -->
+            @Html.Partial("_NavLayout")
+            <!-- Side Nav END -->
+            <!-- Page Container START -->
+            <div class="page-container">
+
+
+                <!-- Content Wrapper START -->
+                @RenderBody()
+                <!-- Content Wrapper END -->
+                <!-- Footer START -->
+                @Html.Partial("_FooterPartial")
+                <!-- Footer END -->
+
+            </div>
+            <!-- Page Container END -->
+            <!-- Search Start-->
+            @Html.Partial("_SearchPartial")
+            <!-- Search End-->
+            <!-- Quick View START -->
+            @Html.Partial("_ViewStartPartial")
+            <!-- Quick View END -->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css" rel="stylesheet">
+    <!-- Core Vendors JS -->
+    <script src="~/Style/assets/js/vendors.min.js"></script>
+
+    <!-- page js -->
+    <script src="~/Style/assets/vendors/chartjs/Chart.min.js"></script>
+    <script src="~/Style/assets/js/pages/dashboard-default.js"></script>
+    <script src="~/Scripts/Block.js"></script>
+    <!-- Core JS -->
+    <script src="~/Style/assets/js/app.min.js"></script>
+
+</body>
+
+</html>

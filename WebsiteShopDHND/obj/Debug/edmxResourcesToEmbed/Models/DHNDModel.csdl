@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ShopDHNDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ShopDHNDEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Category" EntityType="ShopDHNDModel.Category" />
+    <EntitySet Name="Product" EntityType="ShopDHNDModel.Product" />
+    <EntitySet Name="sysdiagrams" EntityType="ShopDHNDModel.sysdiagrams" />
+    <AssociationSet Name="FK_Product_Category" Association="ShopDHNDModel.FK_Product_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <EntitySet Name="Login" EntityType="ShopDHNDModel.Login" />
+    <EntitySet Name="Role" EntityType="ShopDHNDModel.Role" />
+    <AssociationSet Name="FK_Login_Role" Association="ShopDHNDModel.FK_Login_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Login" EntitySet="Login" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="id_cate" />
+    </Key>
+    <Property Name="id_cate" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name_cate" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="time_Start" Type="Int32" Nullable="false" />
+    <Property Name="time_Update" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="ShopDHNDModel.FK_Product_Category" FromRole="Category" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="id_prod" />
+    </Key>
+    <Property Name="id_prod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_cate" Type="Int32" Nullable="false" />
+    <Property Name="name_prod" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="des_prod" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="img_prod" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="status_prod" Type="Boolean" Nullable="false" />
+    <Property Name="time_Start" Type="Int32" Nullable="false" />
+    <Property Name="time_Update" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Category" Relationship="ShopDHNDModel.FK_Product_Category" FromRole="Product" ToRole="Category" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Product_Category">
+    <End Type="ShopDHNDModel.Category" Role="Category" Multiplicity="1" />
+    <End Type="ShopDHNDModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id_cate" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="id_cate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="id_login" />
+    </Key>
+    <Property Name="id_login" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id_role" Type="Int32" Nullable="false" />
+    <Property Name="creadate" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Role" Relationship="ShopDHNDModel.FK_Login_Role" FromRole="Login" ToRole="Role" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="id_role" />
+    </Key>
+    <Property Name="id_role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name_role" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Login" Relationship="ShopDHNDModel.FK_Login_Role" FromRole="Role" ToRole="Login" />
+  </EntityType>
+  <Association Name="FK_Login_Role">
+    <End Type="ShopDHNDModel.Role" Role="Role" Multiplicity="1" />
+    <End Type="ShopDHNDModel.Login" Role="Login" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="id_role" />
+      </Principal>
+      <Dependent Role="Login">
+        <PropertyRef Name="id_role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

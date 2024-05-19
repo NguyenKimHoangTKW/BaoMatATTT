@@ -1,0 +1,30 @@
+1. Check Validation cho các ô nhập liệu trong Website.
+2. Chặn các dữ liệu nhập vào là dạng mã script.
+3. Chặn người dùng vào Devtool.
+4. Tự động Logout khi người dùng treo hệ thống.
+5. Chặn người dùng truy cập trang quản trị của Web.
+6. Mã hóa mật khẩu bằng MD5.
+7. Chặn các đường Link Script dạng API web, ví dụ : CDN, Ajax,...
+
+Postman là gì?
+
+Validation Website là gì?
+
+CDN là gì? Nếu như có mã chèn mà web chặn nhập dạng Script
+
+Mã hóa MD5 là như thế nào?
+
+public static string GetMD5(string str)
+{
+    MD5 md5 = new MD5CryptoServiceProvider();
+    byte[] fromData = Encoding.UTF8.GetBytes(str);
+    byte[] targetData = md5.ComputeHash(fromData);
+    string byte2String = null;
+
+    for (int i = 0; i < targetData.Length; i++)
+    {
+        byte2String += targetData[i].ToString("x2");
+
+    }
+    return byte2String;
+}

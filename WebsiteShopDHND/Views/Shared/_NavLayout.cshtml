@@ -1,0 +1,41 @@
+﻿@{
+    var isAdmin = Session["Admin"] as WebsiteShopDHND.Models.Login;
+    var isUser = Session["User"] as WebsiteShopDHND.Models.Login;
+}
+
+<div class="side-nav">
+    <div class="side-nav-inner">
+        <ul class="side-nav-menu scrollable">
+            <li class="nav-item dropdown open">
+                @if (isAdmin != null || isUser != null)
+                {
+                    <a class="dropdown-toggle" href="javascript:void(0);">
+                        <span class="icon-holder">
+                            <i class="anticon anticon-dashboard"></i>
+                        </span>
+                        <span class="title">Dashboard</span>
+                        <span class="arrow">
+                            <i class="arrow-icon"></i>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu">
+
+                        @if (isAdmin != null)
+                        {
+                        <li>
+                            <a href="/Home/Index">Thêm mới danh mục sản phẩm</a>
+                        </li>
+                        }
+                        @if (isUser != null)
+                        {
+                        <li>
+                            <a href="/LoadProd/LoadProd">View Danh Sách Sản phẩm</a>
+                        </li>
+                        }
+                        
+                    </ul>
+                }
+                </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\AnToanBaoMat\\WebsiteShopDHND\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{31224B64-FE44-4592-A0B2-29B79C30EB55}|WebsiteShopDHND\\WebsiteShopDHND.csproj|d:\\antoanbaomat\\websiteshopdhnd\\websiteshopdhnd\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31224B64-FE44-4592-A0B2-29B79C30EB55}|WebsiteShopDHND\\WebsiteShopDHND.csproj|solutionrelative:websiteshopdhnd\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31224B64-FE44-4592-A0B2-29B79C30EB55}|WebsiteShopDHND\\WebsiteShopDHND.csproj|d:\\antoanbaomat\\websiteshopdhnd\\websiteshopdhnd\\views\\login\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{31224B64-FE44-4592-A0B2-29B79C30EB55}|WebsiteShopDHND\\WebsiteShopDHND.csproj|solutionrelative:websiteshopdhnd\\views\\login\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31224B64-FE44-4592-A0B2-29B79C30EB55}|WebsiteShopDHND\\WebsiteShopDHND.csproj|d:\\antoanbaomat\\websiteshopdhnd\\websiteshopdhnd\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{31224B64-FE44-4592-A0B2-29B79C30EB55}|WebsiteShopDHND\\WebsiteShopDHND.csproj|solutionrelative:websiteshopdhnd\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31224B64-FE44-4592-A0B2-29B79C30EB55}|WebsiteShopDHND\\WebsiteShopDHND.csproj|d:\\antoanbaomat\\websiteshopdhnd\\websiteshopdhnd\\scripts\\category.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{31224B64-FE44-4592-A0B2-29B79C30EB55}|WebsiteShopDHND\\WebsiteShopDHND.csproj|solutionrelative:websiteshopdhnd\\scripts\\category.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31224B64-FE44-4592-A0B2-29B79C30EB55}|WebsiteShopDHND\\WebsiteShopDHND.csproj|d:\\antoanbaomat\\websiteshopdhnd\\websiteshopdhnd\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{31224B64-FE44-4592-A0B2-29B79C30EB55}|WebsiteShopDHND\\WebsiteShopDHND.csproj|solutionrelative:websiteshopdhnd\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31224B64-FE44-4592-A0B2-29B79C30EB55}|WebsiteShopDHND\\WebsiteShopDHND.csproj|d:\\antoanbaomat\\websiteshopdhnd\\websiteshopdhnd\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{31224B64-FE44-4592-A0B2-29B79C30EB55}|WebsiteShopDHND\\WebsiteShopDHND.csproj|solutionrelative:websiteshopdhnd\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31224B64-FE44-4592-A0B2-29B79C30EB55}|WebsiteShopDHND\\WebsiteShopDHND.csproj|d:\\antoanbaomat\\websiteshopdhnd\\websiteshopdhnd\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31224B64-FE44-4592-A0B2-29B79C30EB55}|WebsiteShopDHND\\WebsiteShopDHND.csproj|solutionrelative:websiteshopdhnd\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31224B64-FE44-4592-A0B2-29B79C30EB55}|WebsiteShopDHND\\WebsiteShopDHND.csproj|d:\\antoanbaomat\\websiteshopdhnd\\websiteshopdhnd\\scripts\\block.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{31224B64-FE44-4592-A0B2-29B79C30EB55}|WebsiteShopDHND\\WebsiteShopDHND.csproj|solutionrelative:websiteshopdhnd\\scripts\\block.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\AnToanBaoMat\\WebsiteShopDHND\\WebsiteShopDHND\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebsiteShopDHND\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\AnToanBaoMat\\WebsiteShopDHND\\WebsiteShopDHND\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebsiteShopDHND\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAmwHUAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T13:32:00.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\AnToanBaoMat\\WebsiteShopDHND\\WebsiteShopDHND\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebsiteShopDHND\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\AnToanBaoMat\\WebsiteShopDHND\\WebsiteShopDHND\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebsiteShopDHND\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAADMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-18T13:25:10.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\AnToanBaoMat\\WebsiteShopDHND\\WebsiteShopDHND\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebsiteShopDHND\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\AnToanBaoMat\\WebsiteShopDHND\\WebsiteShopDHND\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "WebsiteShopDHND\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAJgAAAAAAAAAAAAwwKwAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-18T13:24:28.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Category.js",
+              "DocumentMoniker": "D:\\AnToanBaoMat\\WebsiteShopDHND\\WebsiteShopDHND\\Scripts\\Category.js",
+              "RelativeDocumentMoniker": "WebsiteShopDHND\\Scripts\\Category.js",
+              "ToolTip": "D:\\AnToanBaoMat\\WebsiteShopDHND\\WebsiteShopDHND\\Scripts\\Category.js",
+              "RelativeToolTip": "WebsiteShopDHND\\Scripts\\Category.js",
+              "ViewState": "AQIAACQAAAAAAAAAAAAqwMIAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-18T13:19:30.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Block.js",
+              "DocumentMoniker": "D:\\AnToanBaoMat\\WebsiteShopDHND\\WebsiteShopDHND\\Scripts\\Block.js",
+              "RelativeDocumentMoniker": "WebsiteShopDHND\\Scripts\\Block.js",
+              "ToolTip": "D:\\AnToanBaoMat\\WebsiteShopDHND\\WebsiteShopDHND\\Scripts\\Block.js",
+              "RelativeToolTip": "WebsiteShopDHND\\Scripts\\Block.js",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAQwB4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-18T13:18:41.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\AnToanBaoMat\\WebsiteShopDHND\\WebsiteShopDHND\\Views\\Login\\Login.cshtml",
+              "RelativeDocumentMoniker": "WebsiteShopDHND\\Views\\Login\\Login.cshtml",
+              "ToolTip": "D:\\AnToanBaoMat\\WebsiteShopDHND\\WebsiteShopDHND\\Views\\Login\\Login.cshtml",
+              "RelativeToolTip": "WebsiteShopDHND\\Views\\Login\\Login.cshtml",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAFEAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-18T12:22:44.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\AnToanBaoMat\\WebsiteShopDHND\\WebsiteShopDHND\\Views\\Login\\Register.cshtml",
+              "RelativeDocumentMoniker": "WebsiteShopDHND\\Views\\Login\\Register.cshtml",
+              "ToolTip": "D:\\AnToanBaoMat\\WebsiteShopDHND\\WebsiteShopDHND\\Views\\Login\\Register.cshtml",
+              "RelativeToolTip": "WebsiteShopDHND\\Views\\Login\\Register.cshtml",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAwwFIAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-18T11:48:51.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "D:\\AnToanBaoMat\\WebsiteShopDHND\\WebsiteShopDHND\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "WebsiteShopDHND\\Controllers\\LoginController.cs",
+              "ToolTip": "D:\\AnToanBaoMat\\WebsiteShopDHND\\WebsiteShopDHND\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "WebsiteShopDHND\\Controllers\\LoginController.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAowGUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T10:39:51.797Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

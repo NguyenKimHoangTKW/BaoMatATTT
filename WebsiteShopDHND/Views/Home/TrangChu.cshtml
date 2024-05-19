@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "TrangChu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var isAdmin = Session["Admin"] as WebsiteShopDHND.Models.Login;
+    var isUser = Session["User"] as WebsiteShopDHND.Models.Login;
+    
+}
+
+<div class="app">
+    <div class="container-fluid">
+        <div class="d-flex full-height p-v-20 flex-column justify-content-between">
+            <div class="d-none d-md-flex p-h-40">
+                <img src="assets/images/logo/logo.png" alt="">
+            </div>
+
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-8 m-h-auto">
+                        <div class="text-center m-b-50">
+                            <img class="img-fluid w-90" src="~/Style/assets/images/others/error-2.png" alt="">
+                            @{
+                                var greeting = isAdmin != null ? $"Xin chào {isAdmin.username}, chào mừng bạn đến với Website bán hàng DHND" : isUser != null ? $"Xin chào {isUser.username},chào mừng bạn đến với Website bán hàng DHND " : "Xin chào, chào mừng bạn đến với Website bán hàng DHND";
+                                var loginMessage = isAdmin == null && isUser == null ? "Bạn vui lòng <a href='/Login/Login'>click vào đây</a> để đăng nhập để tiếp tục sử dụng các chức năng của Website" : "";
+                            }
+                            <h2 class="font-weight-light font-size-30 m-t-60 m-b-20">@greeting</h2>
+                            @Html.Raw(loginMessage)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="d-none d-md-flex  p-h-40 justify-content-between">
+
+                <ul class="list-inline">
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
