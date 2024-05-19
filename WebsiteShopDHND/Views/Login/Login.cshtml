@@ -9,10 +9,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Enlink - Admin Dashboard Template</title>
+    <title>Đăng nhập tài khoản - Shop quần áo DHND</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="~/Style/assets/images/logo/favicon.png">
+    <link rel="shortcut icon" href="~/Style/assets/images/logo/logo.jpg">
 
     <!-- page css -->
     <!-- Core css -->
@@ -20,7 +20,6 @@
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css" rel="stylesheet">
 
 </head>
-
 <body>
     <div class="app">
         <div class="container-fluid p-h-0 p-v-20 bg full-height d-flex" style="background-image: url('~/Style/assets/images/others/login-3.png')">
@@ -31,7 +30,7 @@
                             <div class="card shadow-lg">
                                 <div class="card-body">
                                     <div class="d-flex align-items-center justify-content-between m-b-30">
-                                        <img class="img-fluid" alt="" src="~/Style/assets/images/logo/logo.png">
+                                        <img class="img-fluid" alt="" src="~/Style/assets/images/logo/logo.jpg" style=" width: 45px;">
                                         <h2 class="m-b-0">Sign In</h2>
                                     </div>
                                     <form onsubmit="return false;">
@@ -95,7 +94,7 @@
                 type: 'POST',
                 data: JSON.stringify({
                     username: UserName,
-                    password: PassWord
+                    password    : PassWord
                 }),
                 contentType: 'application/json',
                 success: function (response) {
@@ -119,9 +118,63 @@
                 },
             });
         }
+        function validateInput(input) {
+            const scriptPattern = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi;
+            const apiPattern = /^(https?:\/\/)([^\/]+)/i;
 
+            if (scriptPattern.test(input)) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Cảnh báo ! Bạn không được nhập dữ liệu dạng Script vào các ô nhập liệu',
+                });
+                return false;
+            }
+
+            if (apiPattern.test(input)) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Cảnh báo ! Bạn không được nhập dữ liệu từ API bên ngoài',
+                });
+                return false;
+            }
+
+            return true;
+        };
+
+        function validateForm() {
+            const inputElements = document.querySelectorAll('input, textarea');
+            for (let inputElement of inputElements) {
+                if (!validateInput(inputElement.value)) {
+                    return false;
+                }
+            }
+            return true;
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const inputs = document.querySelectorAll("input, textarea");
+            for (let input of inputs) {
+                input.addEventListener("input", (event) => {
+                    const value = event.target.value;
+                    if (!validateInput(value)) {
+                        event.target.value = '';
+                    } else if (!validateAPICall(value)) {
+                        event.target.value = value.replace(/^(https?:\/\/)([^\/]+)/i, "");
+                    } else {
+                        event.target.value = value.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "");
+                    }
+                });
+            }
+        });
+
+        function validateAPICall(input) {
+            const apiPattern = /^(https?:\/\/)([^\/]+)/i;
+            return !apiPattern.test(input);
+        }
     </script>
-
+    @*<script src="~/Scripts/Block.js"></script>*@
 </body>
 
 </html>

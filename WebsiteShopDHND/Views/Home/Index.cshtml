@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Quản lý danh mục sản phẩm - Shop quần áo DHND";
 }
 
 <div class="main-content">
@@ -150,39 +150,39 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     var timeout;
-            function startTimer() {
-            timeout = setTimeout(function() {
-                Swal.fire({
-                    title: "Quá thời gian truy cập!",
-                    text: "Bạn sẽ được chuyển hướng về trang chủ.",
-                    icon: "warning",
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "Đồng ý"
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        fetch('@Url.Action("ClearSession", "Home")', { method: 'POST' })
+    function startTimer() {
+        timeout = setTimeout(function () {
+            Swal.fire({
+                title: "Quá thời gian truy cập!",
+                text: "Bạn sẽ được chuyển hướng về trang chủ.",
+                icon: "warning",
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Đồng ý"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    fetch('@Url.Action("ClearSession", "Home")', { method: 'POST' })
                         .then(() => {
                             window.location.href = '@Url.Action("TrangChu", "Home")';
                         })
                         .catch(() => {
                             window.location.href = '@Url.Action("TrangChu", "Home")';
                         });
-                    }
-                });
-            }, 3000);
-        }
-            function resetTimer() {
-                clearTimeout(timeout);
-                startTimer();
-            }
-
-            document.addEventListener('DOMContentLoaded', (event) => {
-                startTimer();
+                }
             });
+        }, 3000);
+    }
+    function resetTimer() {
+        clearTimeout(timeout);
+        startTimer();
+    }
 
-            document.addEventListener('mousemove', resetTimer);
-            document.addEventListener('keypress', resetTimer);
-            document.addEventListener('click', resetTimer);
+    document.addEventListener('DOMContentLoaded', (event) => {
+        startTimer();
+    });
+
+    document.addEventListener('mousemove', resetTimer);
+    document.addEventListener('keypress', resetTimer);
+    document.addEventListener('click', resetTimer);
 </script>
 @Scripts.Render("~/bundles/jquery")

@@ -324,7 +324,11 @@
     <Content Include="Style\assets\images\logo\logo-fold-white.png" />
     <Content Include="Style\assets\images\logo\logo-fold.png" />
     <Content Include="Style\assets\images\logo\logo-white.png" />
+    <Content Include="Style\assets\images\logo\logo.jpg" />
     <Content Include="Style\assets\images\logo\logo.png" />
+    <Content Include="Style\assets\images\logo\LogoT.jpg" />
+    <Content Include="Style\assets\images\logo\mememeo2.jpg" />
+    <Content Include="Style\assets\images\logo\meomeme.jpg" />
     <Content Include="Style\assets\images\others\adobe-thumb.png" />
     <Content Include="Style\assets\images\others\amazon-thumb.png" />
     <Content Include="Style\assets\images\others\cambridge-thumb.png" />

@@ -11,6 +11,10 @@ namespace WebsiteShopDHND.Controllers
         // GET: LoadProd
         public ActionResult LoadProd()
         {
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("Error", "Home");
+            }
             return View();
         }
     }

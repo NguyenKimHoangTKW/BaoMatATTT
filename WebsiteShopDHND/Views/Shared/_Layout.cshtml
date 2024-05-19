@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Enlink - Admin Dashboard Template</title>
+    <title>@ViewBag.Title</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="~/Style/assets/images/logo/favicon.png">
+    <link rel="shortcut icon" href="~/Style/assets/images/logo/logo.jpg">
 
     <!-- page css -->
     <!-- Core css -->
@@ -49,14 +49,71 @@
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css" rel="stylesheet">
     <!-- Core Vendors JS -->
     <script src="~/Style/assets/js/vendors.min.js"></script>
-
     <!-- page js -->
     <script src="~/Style/assets/vendors/chartjs/Chart.min.js"></script>
     <script src="~/Style/assets/js/pages/dashboard-default.js"></script>
-    <script src="~/Scripts/Block.js"></script>
+    @*<script src="~/Scripts/Block.js"></script>*@
     <!-- Core JS -->
     <script src="~/Style/assets/js/app.min.js"></script>
+    <script>
+        function validateInput(input) {
+            const scriptPattern = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi;
+            const apiPattern = /^(https?:\/\/)([^\/]+)/i;
 
+            if (scriptPattern.test(input)) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Cảnh báo ! Bạn không được nhập dữ liệu dạng Script vào các ô nhập liệu',
+                });
+                return false;
+            }
+
+            // Kiểm tra xem input có chứa URL API không
+            if (apiPattern.test(input)) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Cảnh báo ! Bạn không được nhập dữ liệu từ API bên ngoài',
+                });
+                return false;
+            }
+
+            return true;
+        };
+
+        // Hàm kiểm tra toàn bộ biểu mẫu trước khi gửi
+        function validateForm() {
+            const inputElements = document.querySelectorAll('input, textarea');
+            for (let inputElement of inputElements) {
+                if (!validateInput(inputElement.value)) {
+                    return false;
+                }
+            }
+            return true;
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const inputs = document.querySelectorAll("input, textarea");
+            for (let input of inputs) {
+                input.addEventListener("input", (event) => {
+                    const value = event.target.value;
+                    if (!validateInput(value)) {
+                        event.target.value = '';
+                    } else if (!validateAPICall(value)) {
+                        event.target.value = value.replace(/^(https?:\/\/)([^\/]+)/i, "");
+                    } else {
+                        event.target.value = value.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "");
+                    }
+                });
+            }
+        });
+
+        function validateAPICall(input) {
+            const apiPattern = /^(https?:\/\/)([^\/]+)/i;
+            return !apiPattern.test(input);
+        }
+    </script>
 </body>
 
 </html>

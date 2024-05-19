@@ -13,10 +13,12 @@ namespace WebsiteShopDHND.Controllers
     public class HomeController : Controller
     {
         ShopDHNDEntities db = new ShopDHNDEntities();
+
         public ActionResult TrangChu()
         {
             return View();
         }
+
         public ActionResult Index()
         {
             if (Session["Admin"] == null)
@@ -25,10 +27,12 @@ namespace WebsiteShopDHND.Controllers
             }
             return View();
         }
+
         public ActionResult Error()
         {
             return View();
         }
+
         [HttpGet]
         public ActionResult LoadCategory()
         {
@@ -39,21 +43,32 @@ namespace WebsiteShopDHND.Controllers
                 NgayBatDau = ct.time_Start,
                 CapNhatLanCuoi = ct.time_Update,
             }).ToList();
-            return Json(new {data = ListCategory, TotalItem = ListCategory.Count},JsonRequestBehavior.AllowGet);
+            return Json(new { data = ListCategory, TotalItem = ListCategory.Count }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult AddCategory(Category cat)
         {
             var status = "";
             DateTime now = DateTime.UtcNow;
+
+            var nameCate = EscapeInput(cat.name_cate);
+
+            
             if (ModelState.IsValid)
             {
-                if (db.Category.SingleOrDefault(c => c.name_cate == cat.name_cate) != null)
+                if (IsEscapedInput(nameCate))
                 {
-                    status = "Tên danh mục không được bỏ trống";
+                    status = "Tên danh mục chứa ký tự không hợp lệ.";
+                    return Json(new { status = status }, JsonRequestBehavior.AllowGet);
                 }
-                else if (string.IsNullOrEmpty(cat.name_cate))
+
+                else if (db.Category.SingleOrDefault(c => c.name_cate == nameCate) != null)
+                {
+                    status = "Tên danh mục đã tồn tại.";
+                }
+                else if (string.IsNullOrEmpty(nameCate))
                 {
                     status = "Không được bỏ trống tên danh mục";
                 }
@@ -62,32 +77,50 @@ namespace WebsiteShopDHND.Controllers
                     int unixTimestamp = (int)(now.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
                     cat.time_Start = unixTimestamp;
                     cat.time_Update = unixTimestamp;
+                    cat.name_cate = nameCate;
                     status = "Thêm thành công";
                     db.Category.Add(cat);
                     db.SaveChanges();
                 }
             }
+
             return Json(new { status = status }, JsonRequestBehavior.AllowGet);
         }
+
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Update(Category cat)
         {
             var status = "";
             DateTime now = DateTime.UtcNow;
 
+            var nameCate = EscapeInput(cat.name_cate);
+
+            if (IsEscapedInput(nameCate))
+            {
+                status = "Tên danh mục chứa ký tự không hợp lệ.";
+                return Json(new { status = status }, JsonRequestBehavior.AllowGet);
+            }
+
             var cate = db.Category.Find(cat.id_cate);
             if (cate != null)
             {
                 int unixTimestamp = (int)(now.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
-                cate.time_Update = unixTimestamp; // Update the time_Update property
-                cate.id_cate = cat.id_cate;
-                cate.name_cate = cat.name_cate;
+                cate.time_Update = unixTimestamp;
+                cate.name_cate = nameCate;
                 db.SaveChanges();
                 status = "Cập nhật thành công";
             }
+            else
+            {
+                status = "Danh mục không tồn tại.";
+            }
+
             return Json(new { status = status }, JsonRequestBehavior.AllowGet);
         }
+
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Delete(int id)
         {
             var status = "";
@@ -98,6 +131,11 @@ namespace WebsiteShopDHND.Controllers
                 db.SaveChanges();
                 status = "Xóa thành công";
             }
+            else
+            {
+                status = "Danh mục không tồn tại.";
+            }
+
             return Json(new { status = status });
         }
 
@@ -110,13 +148,35 @@ namespace WebsiteShopDHND.Controllers
                 TenDanhMuc = d.name_cate,
                 TimeStart = d.time_Start,
             }).FirstOrDefault();
-            return Json(new { data = item ,status = "Lấy dữ liệu thành công" }, JsonRequestBehavior.AllowGet);
+
+            return Json(new { data = item, status = "Lấy dữ liệu thành công" }, JsonRequestBehavior.AllowGet);
         }
+
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult ClearSession()
         {
             Session.Clear();
             return new HttpStatusCodeResult(HttpStatusCode.OK);
+        }
+        private string EscapeInput(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                return input;
+            }
+
+            return System.Net.WebUtility.HtmlEncode(input);
+        }
+
+        private bool IsEscapedInput(string input)
+        {
+            if (input == null)
+            {
+                return false;
+            }
+
+            return input.Contains("&amp;") || input.Contains("&lt;") || input.Contains("&gt;") || input.Contains("&quot;") || input.Contains("&#x27;") || input.Contains("&#x2F;");
         }
     }
 }
